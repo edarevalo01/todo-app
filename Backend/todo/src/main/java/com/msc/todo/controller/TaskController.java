@@ -1,11 +1,14 @@
 package com.msc.todo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,11 +27,15 @@ public class TaskController {
 	public @ResponseBody List<Task> getAllTask() {
 		return taskRepositoryDAO.findAll();
 	}
+	
+	@RequestMapping(path="/save", method = RequestMethod.POST)
+	public @ResponseBody String saveTask(@RequestBody Task task) {
+		taskRepositoryDAO.save(task);
+		return "Task saved";
+	}
+	
+	@RequestMapping(path="/getbyid", method = RequestMethod.GET)
+	public @ResponseBody Optional<Task> getById(@RequestParam long id) {
+		return taskRepositoryDAO.findById(id);
+	}
 }
-
-
-
-
-
-
-
