@@ -38,4 +38,23 @@ public class TaskController {
 	public @ResponseBody Optional<Task> getById(@RequestParam long id) {
 		return taskRepositoryDAO.findById(id);
 	}
+	
+	@RequestMapping(path="/update", method = RequestMethod.PUT)
+	public @ResponseBody Optional<Task> update(@RequestBody Task task) {
+		Optional<Task> optTask = taskRepositoryDAO.findById(task.getId());
+		taskRepositoryDAO.save(task);
+		return optTask;
+	}
+	
+	@RequestMapping(path="/delete", method = RequestMethod.DELETE)
+	public @ResponseBody String delete(@RequestParam long id) {
+		taskRepositoryDAO.deleteById(id);
+		return "Task deleted";
+	}
+	
+	@RequestMapping(path="/getByName", method = RequestMethod.GET)
+	public @ResponseBody List<Task> getByName(@RequestParam String name) {
+		return taskRepositoryDAO.findByName(name);
+	}
 }
+
