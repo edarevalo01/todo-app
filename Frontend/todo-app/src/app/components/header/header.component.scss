@@ -1,0 +1,32 @@
+@import '../../../styles.scss';
+
+.topnav {
+  overflow: hidden;
+  background-color: $gris;
+  padding: 20px;
+
+  & a {
+    float: left;
+    color: $perla;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  & a:hover {
+    background-color: $blanco;
+    color: $negro;
+  }
+
+  & a.active {
+    background-color: $verde;
+    color: $blanco;
+  }
+  
+  .topnav-right {
+    float: right;
+  }
+
+}
+

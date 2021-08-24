@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+/*Fuentes*/
+$fuente-principal: Arial, Helvetica, sans-serif;
+
+/*Colores*/
+$gris: #333;
+$perla: #f2f2f2;
+$blanco: #ffff;
+$negro: black;
+$verde: #04AA6D;
+
 body {
   margin: 0;
   font-family: $fuente-principal;
