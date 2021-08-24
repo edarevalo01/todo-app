@@ -13,6 +13,11 @@ export class AppComponent {
   edad: number = 16;
   casado: boolean = false;
   listaNombres: Array<string> = ["Alejandro", "Cristian", "Rogger", "Sergio"];
+  persona = {
+    name: "alejandro",
+    age: 24,
+    married: false
+  }
   //listaNombres: string[] = [];
 
   guardar() {
